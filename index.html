@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevShop - Boutique en ligne</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo">Dev<span>Shop</span></div>
+
+    <nav class="nav">
+      <button class="nav-btn active" data-category="all">Accueil</button>
+      <button class="nav-btn" data-category="men's clothing">Hommes</button>
+      <button class="nav-btn" data-category="women's clothing">Femmes</button>
+      <button class="nav-btn" data-category="jewelery">Bijoux</button>
+      <button class="nav-btn" data-category="electronics">Electronique</button>
+    </nav>
+
+    <button id="cartButton" class="cart-button" aria-label="Ouvrir le panier">Panier 
+        <span id="cartCount">0</span>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">BIENVENUE CHEZ DEVSHOP</p>
+        <h1>Tout ce qu'il vous faut,<br><span>au même endroit.</span></h1>
+        <p class="hero-text">
+          Découvrez nos produits, recherchez vos articles préférés
+          et ajoutez-les facilement à votre panier.
+        </p>
+      </div>
+    </section>
+
+    <section class="shop-section">
+      <div class="section-top">
+        <div>
+          <h2>Nos produits</h2>
+          <p id="resultInfo">Chargement des produits...</p>
+        </div>
+
+        <div class="search-wrapper">
+          <label for="searchInput" class="sr-only">Rechercher un produit</label>
+          <input
+            type="search"
+            id="searchInput"
+            placeholder="Rechercher un produit..."
+            autocomplete="off"
+          >
+        </div>
+      </div>
+
+      <div id="loader" class="loader-container">
+        <div class="loader"></div>
+        <p>Chargement des produits...</p>
+      </div>
+
+      <div id="errorMessage" class="error-message hidden">
+        <h3>Oups !</h3>
+        <p>Impossible de récupérer les produits.</p>
+        <button id="retryButton">Réessayer</button>
+      </div>
+
+      <div id="productsContainer" class="products-grid"></div>
+
+      <div id="emptyMessage" class="empty-message hidden">
+        <p>Aucun produit ne correspond à votre recherche.</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="overlay" class="overlay hidden"></div>
+
+  <aside id="cartPanel" class="cart-panel" aria-label="Panier">
+    <div class="cart-header">
+      <h2>Mon panier</h2>
+      <button id="closeCartButton" class="close-button" aria-label="Fermer le panier">×</button>
+    </div>
+
+    <div id="cartItems" class="cart-items">
+    </div>
+
+    <div id="emptyCart" class="empty-cart">
+      <p>Votre panier est vide</p>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total</span>
+        <strong id="cartTotal">0 FCFA</strong>
+      </div>
+      <button id="checkoutButton" class="checkout-button">Passer la commande</button>
+      <button id="clearCartButton" class="clear-button">Vider le panier</button>
+    </div>
+  </aside>
+  <script src="script.js"></script>
+</body>
+</html>
